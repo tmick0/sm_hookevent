@@ -6,4 +6,4 @@ sourcemod plugin allowing an arbitrary command to be executed at the next firing
 
 ### Commands
 
-- **sm_hookevent <event> "<command>"**: execute command when event occurs
+- **sm_hookevent \<event\> "\<command\>"**: execute command when event occurs
