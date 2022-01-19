@@ -28,21 +28,16 @@ Action CmdHookEvent(int client, int argc) {
     }
 
     char event[128];
-    if (GetCmdArg(0, event, sizeof(event)) <= 0) {
-        LogMessage("argument parsing failure");
-        return Plugin_Handled;
-    }
-
     char command[1024];
-    if (GetCmdArg(1, command, sizeof(command) <= 0)) {
+
+    if (GetCmdArg(1, event, sizeof(event)) <= 0 || GetCmdArg(2, command, sizeof(command)) <= 0) {
         LogMessage("argument parsing failure");
         return Plugin_Handled;
     }
 
     HookMap.SetString(event, command, true);
     HookEvent(event, OnEvent);
-
-
+    
     return Plugin_Handled;
 }
 
